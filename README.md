@@ -1,24 +1,30 @@
-# README
+# Product Search API
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+![Sample Screen Shot of Product Search API ](https://user-images.githubusercontent.com/6156896/43077055-437f04c6-8e54-11e8-960a-1d94e03a8a30.png)
+## Getting started
 
-Things you may want to cover:
+``` shell
+git clone git@github.com:fgc29/product-search-api.git
+cd product-search-api
+bundle
+cd client
+yarn
+cd ..
+rake db:create && rake db:migrate && rake db:seed
+```
 
-* Ruby version
+## Start App
+``` shell
+rails s -p 3001
+yarn --cwd client start
+```
 
-* System dependencies
+## Approach
 
-* Configuration
+I decided to use the Levenshtein Distance Algorithm to be able capture products via 
+a fuzzy match query. 
 
-* Database creation
+## Improvements
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+For a production ready application the use of pg-tgrm in postgresql would work or possibly
+a gem that implements some fuzzy matching logic.
